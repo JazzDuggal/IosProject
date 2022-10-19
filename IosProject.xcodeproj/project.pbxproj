@@ -7,18 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04AD1E1D28FF6A93006C774E /* IosProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD1E1C28FF6A93006C774E /* IosProjectApp.swift */; };
-		04AD1E1F28FF6A93006C774E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD1E1E28FF6A93006C774E /* ContentView.swift */; };
+		04AD1E1D28FF6A93006C774E /* ShoppingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD1E1C28FF6A93006C774E /* ShoppingApp.swift */; };
+		04AD1E1F28FF6A93006C774E /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD1E1E28FF6A93006C774E /* HomeScreenView.swift */; };
 		04AD1E2128FF6A96006C774E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04AD1E2028FF6A96006C774E /* Assets.xcassets */; };
 		04AD1E2428FF6A96006C774E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04AD1E2328FF6A96006C774E /* Preview Assets.xcassets */; };
+		04AD1E2B28FF6CD4006C774E /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD1E2A28FF6CD4006C774E /* Products.swift */; };
+		04AD1E2D28FF6D31006C774E /* UserRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD1E2C28FF6D31006C774E /* UserRegisterView.swift */; };
+		04AD1E2F28FF6D77006C774E /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD1E2E28FF6D77006C774E /* Cart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		04AD1E1928FF6A93006C774E /* IosProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IosProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		04AD1E1C28FF6A93006C774E /* IosProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosProjectApp.swift; sourceTree = "<group>"; };
-		04AD1E1E28FF6A93006C774E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		04AD1E1C28FF6A93006C774E /* ShoppingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingApp.swift; sourceTree = "<group>"; };
+		04AD1E1E28FF6A93006C774E /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		04AD1E2028FF6A96006C774E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04AD1E2328FF6A96006C774E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		04AD1E2A28FF6CD4006C774E /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		04AD1E2C28FF6D31006C774E /* UserRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterView.swift; sourceTree = "<group>"; };
+		04AD1E2E28FF6D77006C774E /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +57,11 @@
 		04AD1E1B28FF6A93006C774E /* IosProject */ = {
 			isa = PBXGroup;
 			children = (
-				04AD1E1C28FF6A93006C774E /* IosProjectApp.swift */,
-				04AD1E1E28FF6A93006C774E /* ContentView.swift */,
+				04AD1E1C28FF6A93006C774E /* ShoppingApp.swift */,
+				04AD1E2A28FF6CD4006C774E /* Products.swift */,
+				04AD1E2C28FF6D31006C774E /* UserRegisterView.swift */,
+				04AD1E1E28FF6A93006C774E /* HomeScreenView.swift */,
+				04AD1E2E28FF6D77006C774E /* Cart.swift */,
 				04AD1E2028FF6A96006C774E /* Assets.xcassets */,
 				04AD1E2228FF6A96006C774E /* Preview Content */,
 			);
@@ -137,8 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04AD1E1F28FF6A93006C774E /* ContentView.swift in Sources */,
-				04AD1E1D28FF6A93006C774E /* IosProjectApp.swift in Sources */,
+				04AD1E2D28FF6D31006C774E /* UserRegisterView.swift in Sources */,
+				04AD1E1F28FF6A93006C774E /* HomeScreenView.swift in Sources */,
+				04AD1E2F28FF6D77006C774E /* Cart.swift in Sources */,
+				04AD1E2B28FF6CD4006C774E /* Products.swift in Sources */,
+				04AD1E1D28FF6A93006C774E /* ShoppingApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
