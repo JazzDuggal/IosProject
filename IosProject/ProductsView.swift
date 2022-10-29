@@ -5,46 +5,50 @@ struct ProductsView: View {
     @State var selectedProduct:Types;
     
     enum Types:String, CaseIterable, Identifiable{
-        case general;
-        case kitchen;
-        case garage;
-        case laundry;
-        case milk;
-        case eggs;
+        case Burger;
+        case Pizza;
+        case Juice;
+        case Cake;
+        case IceCream;
+        case Soda;
         var id:Self{self}
     }
     
     init(){
-        selectedProduct = Types.general;
+        selectedProduct = Types.Juice;
     }
     
     var body: some View{
         VStack{
-            Header(heading: "Products")
+            Header(heading: "   Menu")
             CustomDivider(color: .purple, height: 2)
             
             HStack{
-                Text("Products").foregroundColor(.purple)
                 Picker(selection: $selectedProduct, label: Text("category")) {
                     ForEach(Types.allCases){ type in
                         Text(type.rawValue.capitalized);
                     }
-                }.pickerStyle(.wheel).colorMultiply(.purple)
+                }.pickerStyle(.inline)
+                    
                 
-            }
+            }.frame(height: 300)
             CustomDivider(color: .purple, height: 2)
             
             Button("Add to Cart    "){
                 list.productList.append(selectedProduct.rawValue)
             }
-            .foregroundColor(.purple).border(.white)
-            .font(.title2).padding()
+            .foregroundColor(.black)
+                .font(.title2)
+                .padding()
+                .background(Color.yellow.cornerRadius(18))
             
             Button("View Cart    "){
                 list.appState = 3;
             }
-            .foregroundColor(.purple).border(.white)
-            .font(.title2).padding()
+            .foregroundColor(.black)
+                .font(.title2)
+                .padding()
+                .background(Color.yellow.cornerRadius(18))
             
             
         }

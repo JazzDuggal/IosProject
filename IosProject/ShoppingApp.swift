@@ -41,6 +41,12 @@ struct ShoppingApp: App {
             else if(list.appState == 3){
                 CartView().environmentObject(list);
             }
+            else if(list.appState == 4){
+                CheckoutView().environmentObject(list);
+            }
+            else if(list.appState == 5){
+                OrderNumberView().environmentObject(list);
+            }
             
         }
     }

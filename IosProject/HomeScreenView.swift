@@ -1,35 +1,71 @@
 import SwiftUI
+import SpriteKit
+
+class GameScene: SKScene {
+    
+
+    let foodTexture1 = SKTexture(imageNamed: "pizza");
+    let foodTexture2 = SKTexture(imageNamed: "cake");
+    let foodTexture3 = SKTexture(imageNamed: "burger");
+    let foodTexture4 = SKTexture(imageNamed: "nachos");
+    let foodTexture5 = SKTexture(imageNamed: "icecream");
+    let foodTexture6 = SKTexture(imageNamed: "juice");
+    
+    let food:SKSpriteNode = SKSpriteNode(imageNamed: "pizza");
+    
+    override func sceneDidLoad() {
+        physicsBody = SKPhysicsBody(edgeLoopFrom: frame);
+        
+        let texturesArray:Array<SKTexture> = [foodTexture1, foodTexture2, foodTexture3, foodTexture4, foodTexture5, foodTexture6];
+        
+        food.texture = foodTexture1;
+        food.position = CGPoint(x:155, y:205);
+        
+        addChild(food);
+        food.run(SKAction.repeatForever(SKAction.animate(with: texturesArray, timePerFrame: 1.2)));
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else {return}
+        let location = touch.location(in: self)
+        food.run(SKAction.move(to: location, duration: 2))
+        }
+}
 
 struct HomeScreenView: View {
     @EnvironmentObject var list:Shopping;
     @State var name:String = "";
-    @State var selectedCategory:Types;
     
-    enum Types:String, CaseIterable, Identifiable{
-        case general;
-        case kitchen;
-        case garage;
-        case laundry;
-        var id:Self{self}
+    
+    
+    
+    var scene:SKScene {
+            let scene = GameScene();
+        scene.scaleMode = .resizeFill;
+        scene.backgroundColor = SKColor(.white)
+
+            return scene;
     }
     
     init(){
-        selectedCategory = Types.general;
+        
     }
     
     var body: some View {
         VStack {
             
-            Header(heading: "Shopping App")
+            Header(heading: "Fast Food App")
             CustomDivider(color: .purple,height:2)
-            Image(systemName: "cart.fill").resizable()
+            SpriteView(scene: scene);
             CustomDivider(color: .purple,height:2)
-            Text("")
-            Button("Register"){
+            Button("Online Order    "){
                 
                 list.appState = 1;
-            }.foregroundColor(.purple)
+            }.foregroundColor(.black)
                 .font(.title2)
+                .padding()
+                .background(Color.yellow.cornerRadius(18))
             
         }
         Spacer()
@@ -57,11 +93,12 @@ struct Header: View{
     }
     var body: some View{
         HStack{
-            Image("listIcon").resizable()
+            Image("burger").resizable()
                 .frame(width: 64, height: 64)
             Text("\(heading)").foregroundColor(.white)
                 .font(.title)
         }.frame(minWidth: 64, idealWidth: 64, maxWidth: .infinity, minHeight: 64, idealHeight: 64, maxHeight: 64, alignment: .topLeading).background(.purple)
     }
 }
+
 

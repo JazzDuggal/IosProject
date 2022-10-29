@@ -4,9 +4,10 @@ struct UserRegisterView: View {
     @EnvironmentObject var list:Shopping;
     @State var userName:String = "";
     @State var pass:String = "";
+    @State var confirm:String = "";
     var body: some View{
         VStack{
-            Header(heading: "User Register")
+            Header(heading: "   Register")
             CustomDivider(color: .purple, height: 2)
             
             VStack{
@@ -18,14 +19,20 @@ struct UserRegisterView: View {
                     Label("Password", systemImage: "").padding()
                     TextField("minimum 8 characters", text: $pass)
                 }
-            }.frame(height: 200, alignment: .topLeading)
+                HStack{
+                    Label("Confirm Password", systemImage: "").padding()
+                    TextField("minimum 8 characters", text: $pass)
+                }
+            }.frame(height: 250, alignment: .topLeading)
             
             CustomDivider(color: .purple, height: 2)
             Button("Register    "){
                 list.appState = 2
             }
-                .foregroundColor(.purple).border(.white)
+            .foregroundColor(.black)
                 .font(.title2)
+                .padding()
+                .background(Color.yellow.cornerRadius(18))
                 
                 
         }
