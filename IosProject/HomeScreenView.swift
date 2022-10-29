@@ -55,7 +55,7 @@ struct HomeScreenView: View {
     var body: some View {
         VStack {
             
-            Header(heading: "Fast Food App")
+            Header(heading: "   Fast Food")
             CustomDivider(color: .purple,height:2)
             SpriteView(scene: scene);
             CustomDivider(color: .purple,height:2)
