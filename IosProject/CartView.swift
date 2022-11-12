@@ -10,10 +10,11 @@ struct CartView: View {
             Header(heading: "   Items");
             
             CustomDivider(color: .purple, height: 2);
+            
             VStack{
             ForEach(list.productList, id: \.self){product in
                 Text(product)
-            }
+                }
             }.frame(height: 300)
             
             VStack{

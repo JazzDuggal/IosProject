@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ProductsView: View {
+    
     @EnvironmentObject var list:Shopping;
     @State var selectedProduct:Types;
     @State var showingAlert = false;

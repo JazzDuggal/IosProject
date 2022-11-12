@@ -1,6 +1,7 @@
 import SwiftUI
 
 class Shopping: ObservableObject{
+    
     @Published var appState:Int;
     @Published var listName:String?
     @Published var category:String?
