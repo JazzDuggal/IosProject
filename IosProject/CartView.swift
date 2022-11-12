@@ -16,6 +16,11 @@ struct CartView: View {
             }
             }.frame(height: 300)
             
+            VStack{
+                let str:String = String(format: "%@%.2f", "Total: ", list.totalAmount);
+                Label(str, systemImage: "");
+            }
+            
             
             CustomDivider(color: .purple, height: 2);
             

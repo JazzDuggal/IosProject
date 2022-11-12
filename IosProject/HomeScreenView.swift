@@ -60,8 +60,13 @@ struct HomeScreenView: View {
             SpriteView(scene: scene);
             CustomDivider(color: .purple,height:2)
             Button("Online Order    "){
+                if(list.userName == ""){
+                    list.appState = 1;
+                }
+                else{
+                    list.appState = 2;
+                }
                 
-                list.appState = 1;
             }.foregroundColor(.black)
                 .font(.title2)
                 .padding()

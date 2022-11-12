@@ -5,6 +5,8 @@ class Shopping: ObservableObject{
     @Published var listName:String?
     @Published var category:String?
     @Published var productList:Array<String> = [];
+    @Published var userName:String = "";
+    @Published var totalAmount:Double = 0;
     
     enum products:String, CaseIterable, Identifiable{
         case general;
