@@ -1,6 +1,6 @@
 # Changelog
 
-##Week 13:
+## Week 13:
 1. Input Validation implemented for the register page.
 2. All menu items have there Price listed now.
 3. Price Total is calculated according to items in the cart.
