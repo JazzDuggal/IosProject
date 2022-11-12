@@ -28,6 +28,7 @@ class Shopping: ObservableObject{
 @main
 struct ShoppingApp: App {
     @ObservedObject var list:Shopping = Shopping(appState: 0);
+    
     var body: some Scene {
         WindowGroup {
             
