@@ -1,5 +1,11 @@
 # Changelog
 
+## Week 14:
+1. CheckoutView input validation updated.
+2. OrderHistory view created.
+3. previous orders button implemeted on the HomeScreen view.
+4. OrderNumber view updated to show the order details.
+
 ## Week 13:
 1. Input Validation implemented for the register page.
 2. All menu items have there Price listed now.
