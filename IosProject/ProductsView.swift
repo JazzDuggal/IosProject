@@ -36,7 +36,7 @@ struct ProductsView: View {
                 
             }.frame(height: 300)
             CustomDivider(color: .purple, height: 2)
-            
+            HStack{
             Button("Add to Cart    "){
                 list.productList.append(selectedProduct.rawValue)
                 
@@ -87,8 +87,14 @@ struct ProductsView: View {
                 .font(.title2)
                 .padding()
                 .background(Color.yellow.cornerRadius(18))
-            
-            
+            }
+            Button("Home    "){
+                list.appState = 0;
+            }
+            .foregroundColor(.black)
+                .font(.title2)
+                .padding()
+                .background(Color.yellow.cornerRadius(18))
         }
         Spacer()
     }

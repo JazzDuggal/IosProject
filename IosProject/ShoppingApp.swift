@@ -8,6 +8,8 @@ class Shopping: ObservableObject{
     @Published var productList:Array<String> = [];
     @Published var userName:String = "";
     @Published var totalAmount:Double = 0;
+    @Published var orderNumber:Int = 0;
+    @Published var orderHistory:Array<String> = [];
     
     enum products:String, CaseIterable, Identifiable{
         case general;
@@ -50,6 +52,9 @@ struct ShoppingApp: App {
             }
             else if(list.appState == 5){
                 OrderNumberView().environmentObject(list);
+            }
+            else if(list.appState == 6){
+                OrderHistoryView().environmentObject(list);
             }
             
         }

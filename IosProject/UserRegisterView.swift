@@ -32,23 +32,24 @@ struct UserRegisterView: View {
             
             CustomDivider(color: .purple, height: 2)
             Button("Register    "){
+                message = "";
                 if(user == ""){
                     showingAlert = true;
-                    message = "Enter Name";
+                    message += "Enter User Name.\n\n";
                 }
-                else if(pass == ""){
+                if(pass == ""){
                     showingAlert = true;
-                    message = "Enter Password";
+                    message += "Enter Password.\n\n";
                 }
-                else if(pass.count < 8){
+                if(pass.count < 8){
                     showingAlert = true;
-                    message = "Password Length should be minimum 8 digits";
+                    message += "Minimum 8digit password.\n\n";
                 }
-                else if(pass != confirm){
+                if(pass != confirm){
                     showingAlert = true;
-                    message = "Password Not Matching.";
+                    message += "Password Not Matching.\n";
                 }
-                else{
+                if(message==""){
                     list.userName = user;
                 list.appState = 2
                 }
@@ -60,7 +61,13 @@ struct UserRegisterView: View {
                 .padding()
                 .background(Color.yellow.cornerRadius(18))
                 
-                
+            Button("Home    "){
+                list.appState = 0;
+            }
+            .foregroundColor(.black)
+                .font(.title2)
+                .padding()
+                .background(Color.yellow.cornerRadius(18))
         }
         Spacer()
     }

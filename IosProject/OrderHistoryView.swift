@@ -1,20 +1,20 @@
 import SwiftUI
 
-struct OrderNumberView: View {
+struct OrderHistoryView: View {
     @EnvironmentObject var list:Shopping;
     
     
     var body: some View{
         
         VStack{
-            Header(heading: "Order Confirmation");
+            Header(heading: "Order History");
             
             CustomDivider(color: .purple, height: 2);
             
             Form{
-                Text("Order Number: \(list.orderNumber)")
-                ForEach(list.productList, id: \.self){product in
-                    Text(product)
+                
+                ForEach(list.orderHistory, id: \.self){product in
+                    Text("Previous Order: \(product)\n");
                     }
                
             }

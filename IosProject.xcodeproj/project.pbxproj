@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04684F082900F0ED009FCBEF /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04684F072900F0ED009FCBEF /* CheckoutView.swift */; };
+		0499AA1E2920A31300883DB3 /* OrderHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499AA1D2920A31300883DB3 /* OrderHistoryView.swift */; };
 		04A1CFC4290CF6B700CCBC50 /* OrderNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A1CFC3290CF6B700CCBC50 /* OrderNumberView.swift */; };
 		04AD1E1D28FF6A93006C774E /* ShoppingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD1E1C28FF6A93006C774E /* ShoppingApp.swift */; };
 		04AD1E1F28FF6A93006C774E /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AD1E1E28FF6A93006C774E /* HomeScreenView.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		04684F072900F0ED009FCBEF /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		0499AA1D2920A31300883DB3 /* OrderHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryView.swift; sourceTree = "<group>"; };
 		04A1CFC3290CF6B700CCBC50 /* OrderNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderNumberView.swift; sourceTree = "<group>"; };
 		04AD1E1928FF6A93006C774E /* IosProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IosProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04AD1E1C28FF6A93006C774E /* ShoppingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingApp.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				04AD1E2E28FF6D77006C774E /* CartView.swift */,
 				04684F072900F0ED009FCBEF /* CheckoutView.swift */,
 				04A1CFC3290CF6B700CCBC50 /* OrderNumberView.swift */,
+				0499AA1D2920A31300883DB3 /* OrderHistoryView.swift */,
 				04AD1E2028FF6A96006C774E /* Assets.xcassets */,
 				04AD1E2228FF6A96006C774E /* Preview Content */,
 			);
@@ -154,6 +157,7 @@
 			files = (
 				04AD1E2D28FF6D31006C774E /* UserRegisterView.swift in Sources */,
 				04A1CFC4290CF6B700CCBC50 /* OrderNumberView.swift in Sources */,
+				0499AA1E2920A31300883DB3 /* OrderHistoryView.swift in Sources */,
 				04AD1E1F28FF6A93006C774E /* HomeScreenView.swift in Sources */,
 				04684F082900F0ED009FCBEF /* CheckoutView.swift in Sources */,
 				04AD1E2F28FF6D77006C774E /* CartView.swift in Sources */,

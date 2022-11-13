@@ -36,6 +36,7 @@ class GameScene: SKScene {
 struct HomeScreenView: View {
     @EnvironmentObject var list:Shopping;
     @State var name:String = "";
+    @State var showingAlert = false;
     
     
     
@@ -60,14 +61,34 @@ struct HomeScreenView: View {
             SpriteView(scene: scene);
             CustomDivider(color: .purple,height:2)
             Button("Online Order    "){
-                if(list.userName == ""){
+                if(list.orderNumber == 0 && list.userName == ""){
                     list.appState = 1;
                 }
+                else if(list.userName != "" && list.orderNumber == 0){
+                    list.appState = 2;
+                }
                 else{
+                    list.totalAmount=0;
+                    list.productList = [];
                     list.appState = 2;
                 }
                 
             }.foregroundColor(.black)
+                .font(.title2)
+                .padding()
+                .background(Color.yellow.cornerRadius(18))
+            Button("Previous Orders    "){
+                if(list.userName == ""){
+                    showingAlert = true;
+                }
+                else{
+                    list.appState = 6;
+                }
+                
+            }.alert("User not logged-in.", isPresented: $showingAlert) {
+                Button("OK", role: .cancel) { }
+            }
+            .foregroundColor(.black)
                 .font(.title2)
                 .padding()
                 .background(Color.yellow.cornerRadius(18))
@@ -91,6 +112,7 @@ struct CustomDivider: View{
 }
 
 struct Header: View{
+    @EnvironmentObject var list:Shopping;
     var heading:String;
     
     init(heading:String){
