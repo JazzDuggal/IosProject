@@ -55,7 +55,7 @@ struct BeveragesView: View {
                         Text(type.rawValue.capitalized);
                     }
                 }.pickerStyle(.inline)
-                    
+    
                 
             }.frame(height: 260)
             CustomDivider(color: .purple, height: 2)
