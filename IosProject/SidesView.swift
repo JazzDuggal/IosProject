@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ProductsView: View {
+struct SidesView: View {
     
     @EnvironmentObject var list:Shopping;
     @State var selectedProduct:Types;
@@ -8,19 +8,17 @@ struct ProductsView: View {
     @State var message = "";
     
     enum Types:String, CaseIterable, Identifiable{
-        case Burger1     = "Ham Burger              $5";
-        case Burger2     = "Bacon Cheese Burger     $5";
-        case Burger3     = "Cheese Burger           $5";
-        case Burger4     = "Double Cheese Burger    $5";
-        case Burger5     = "Ham & Cheese Burger     $5";
-        case Burger6     = "Mac & Cheese Burger     $5";
-        case Burger7     = "Skyscraper Burger       $5";
+        case cFudge     = "Choclate Fudge   $5";
+        case Fries      = "Large Fries      $3";
+        case mFries     = "Medium Fries     $2";
+        case macCheese  = "Mac n Cheese     $5";
+        case Chips      = "Potato Chips     $2";
         
         var id:Self{self}
     }
     
     init(){
-        selectedProduct = Types.Burger4;
+        selectedProduct = Types.mFries;
     }
     
     var body: some View{
@@ -32,7 +30,7 @@ struct ProductsView: View {
                     list.appState = 2;
                 }
                 .foregroundColor(.black)
-                    .font(.title2)
+                .font(.caption)
                     .padding()
                     .background(Color.yellow.cornerRadius(18))
                 Button("Beverages"){
@@ -46,7 +44,7 @@ struct ProductsView: View {
                     list.appState = 8;
                 }
                 .foregroundColor(.black)
-                    .font(.caption)
+                    .font(.title2)
                     .padding()
                     .background(Color.yellow.cornerRadius(18))
             }
@@ -66,43 +64,31 @@ struct ProductsView: View {
                 list.productList.append(selectedProduct.rawValue)
                 
                 switch selectedProduct {
-                
-                case .Burger1:
+                case .cFudge:
                     showingAlert = true;
-                    message = "Ham Burger added to Cart.";
+                    message = "Choclate Fudge added to Cart.";
                     list.totalAmount+=5;
                     break;
-                case .Burger2:
+                case .Fries:
                     showingAlert = true;
-                    message = "Bacon Cheese Burger added to Cart.";
+                    message = "Large Fries added to Cart.";
+                    list.totalAmount+=3;
+                    break;
+                case .mFries:
+                    showingAlert = true;
+                    message = "Medium Fries added to Cart.";
+                    list.totalAmount+=2;
+                    break;
+                case .macCheese:
+                    showingAlert = true;
+                    message = "Mac n Cheese added to Cart.";
                     list.totalAmount+=5;
                     break;
-                case .Burger3:
+                case .Chips:
                     showingAlert = true;
-                    message = "Cheese Burger added to Cart.";
-                    list.totalAmount+=5;
-                    break;
-                case .Burger4:
-                    showingAlert = true;
-                    message = "Double Cheese Burger added to Cart.";
-                    list.totalAmount+=5;
-                    break;
-                case .Burger5:
-                    showingAlert = true;
-                    message = "Ham & Cheese Burger added to Cart.";
-                    list.totalAmount+=5;
-                    break;
-                case .Burger6:
-                    showingAlert = true;
-                    message = "Mac & Cheese Burger added to Cart.";
-                    list.totalAmount+=5;
-                    break;
-                case .Burger7:
-                    showingAlert = true;
-                    message = "SkyScraper Burger added to Cart.";
-                    list.totalAmount+=5;
-                    break;
-                }
+                    message = "Potato Chips added to Cart.";
+                    list.totalAmount+=2;
+                    break;                }
             }.alert(message, isPresented: $showingAlert) {
                 Button("OK", role: .cancel) { }
             }
@@ -130,4 +116,6 @@ struct ProductsView: View {
         Spacer()
     }
 }
+
+
 

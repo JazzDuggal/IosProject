@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ProductsView: View {
+struct BeveragesView: View {
     
     @EnvironmentObject var list:Shopping;
     @State var selectedProduct:Types;
@@ -8,19 +8,17 @@ struct ProductsView: View {
     @State var message = "";
     
     enum Types:String, CaseIterable, Identifiable{
-        case Burger1     = "Ham Burger              $5";
-        case Burger2     = "Bacon Cheese Burger     $5";
-        case Burger3     = "Cheese Burger           $5";
-        case Burger4     = "Double Cheese Burger    $5";
-        case Burger5     = "Ham & Cheese Burger     $5";
-        case Burger6     = "Mac & Cheese Burger     $5";
-        case Burger7     = "Skyscraper Burger       $5";
-        
+        case Coke       = "Coke             $1";
+        case Dew        = "Mountain Dew     $1";
+        case Juice      = "Orange Juice     $2";
+        case Grape      = "Grape Juice      $2";
+        case Coffee     = "Regular Coffee   $3";
+        case icedCoffee = "Ice Coffee       $3";
         var id:Self{self}
     }
     
     init(){
-        selectedProduct = Types.Burger4;
+        selectedProduct = Types.Juice;
     }
     
     var body: some View{
@@ -32,14 +30,14 @@ struct ProductsView: View {
                     list.appState = 2;
                 }
                 .foregroundColor(.black)
-                    .font(.title2)
+                    .font(.caption)
                     .padding()
                     .background(Color.yellow.cornerRadius(18))
                 Button("Beverages"){
                     list.appState = 7;
                 }
                 .foregroundColor(.black)
-                    .font(.caption)
+                    .font(.title2)
                     .padding()
                     .background(Color.yellow.cornerRadius(18))
                 Button("Sides"){
@@ -66,41 +64,35 @@ struct ProductsView: View {
                 list.productList.append(selectedProduct.rawValue)
                 
                 switch selectedProduct {
-                
-                case .Burger1:
+                case .Juice:
                     showingAlert = true;
-                    message = "Ham Burger added to Cart.";
-                    list.totalAmount+=5;
+                    message = "Orange Juice added to Cart.";
+                    list.totalAmount+=2;
                     break;
-                case .Burger2:
+                case .Dew:
                     showingAlert = true;
-                    message = "Bacon Cheese Burger added to Cart.";
-                    list.totalAmount+=5;
+                    message = "Mountain Dew added to Cart.";
+                    list.totalAmount+=1;
                     break;
-                case .Burger3:
+                case .Coke:
                     showingAlert = true;
-                    message = "Cheese Burger added to Cart.";
-                    list.totalAmount+=5;
+                    message = "Coke added to Cart.";
+                    list.totalAmount+=1;
                     break;
-                case .Burger4:
+                case .Coffee:
                     showingAlert = true;
-                    message = "Double Cheese Burger added to Cart.";
-                    list.totalAmount+=5;
+                    message = "Regular Coffee added to Cart.";
+                    list.totalAmount+=3;
                     break;
-                case .Burger5:
+                case .icedCoffee:
                     showingAlert = true;
-                    message = "Ham & Cheese Burger added to Cart.";
-                    list.totalAmount+=5;
+                    message = "Ice Coffee added to Cart.";
+                    list.totalAmount+=3;
                     break;
-                case .Burger6:
+                case .Grape:
                     showingAlert = true;
-                    message = "Mac & Cheese Burger added to Cart.";
-                    list.totalAmount+=5;
-                    break;
-                case .Burger7:
-                    showingAlert = true;
-                    message = "SkyScraper Burger added to Cart.";
-                    list.totalAmount+=5;
+                    message = "Grape Juice added to Cart.";
+                    list.totalAmount+=2;
                     break;
                 }
             }.alert(message, isPresented: $showingAlert) {
@@ -130,4 +122,5 @@ struct ProductsView: View {
         Spacer()
     }
 }
+
 

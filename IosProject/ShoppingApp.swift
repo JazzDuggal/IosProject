@@ -56,6 +56,12 @@ struct ShoppingApp: App {
             else if(list.appState == 6){
                 OrderHistoryView().environmentObject(list);
             }
+            else if(list.appState == 7){
+                BeveragesView().environmentObject(list);
+            }
+            else if(list.appState == 8){
+                SidesView().environmentObject(list);
+            }
             
         }
     }
