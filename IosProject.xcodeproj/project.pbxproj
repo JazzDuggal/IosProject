@@ -71,14 +71,14 @@
 				04AD1E1E28FF6A93006C774E /* HomeScreenView.swift */,
 				04AD1E2C28FF6D31006C774E /* UserRegisterView.swift */,
 				04AD1E2A28FF6CD4006C774E /* ProductsView.swift */,
+				04513C67293B33CA006A339E /* SidesView.swift */,
+				04513C65293B3093006A339E /* BeveragesView.swift */,
 				04AD1E2E28FF6D77006C774E /* CartView.swift */,
 				04684F072900F0ED009FCBEF /* CheckoutView.swift */,
 				04A1CFC3290CF6B700CCBC50 /* OrderNumberView.swift */,
 				0499AA1D2920A31300883DB3 /* OrderHistoryView.swift */,
 				04AD1E2028FF6A96006C774E /* Assets.xcassets */,
 				04AD1E2228FF6A96006C774E /* Preview Content */,
-				04513C65293B3093006A339E /* BeveragesView.swift */,
-				04513C67293B33CA006A339E /* SidesView.swift */,
 			);
 			path = IosProject;
 			sourceTree = "<group>";
